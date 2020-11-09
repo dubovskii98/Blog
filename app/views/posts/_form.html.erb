@@ -17,13 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url, id: :post_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.text_field :category_id, id: :post_category_id %>
+    <% array = Category.all.map { |category| [category.name, category.id] }  %>
+    <%= select_tag(:category_id, options_for_select(array)) %>
   </div>
 
   <div class="actions">
