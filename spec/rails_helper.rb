@@ -8,7 +8,6 @@ require 'rspec/rails'
 require 'factory_girl_rails'
 require 'capybara/rspec'
 
-config.include FactoryGirl::Syntax::Methods
 Capybara.server = :puma
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -43,7 +42,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
-
+  config.include FactoryGirl::Syntax::Methods
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
